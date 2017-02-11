@@ -1,0 +1,49 @@
+\documentclass[review, authoryear, 3p, 12pt]{elsarticle}
+
+\usepackage{lineno}
+
+% package for hyperlink
+\usepackage[colorlinks, anchorcolor=blue]{hyperref}
+
+% package for color of the text
+\usepackage{color}
+
+% package for new caption name
+\usepackage{scrbase}
+
+% packae for table
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{diagbox}
+
+% package for math
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathrsfs} %curlycue for letters
+
+% package for subimage
+\usepackage{subfig}
+
+% package for algorithm
+\usepackage{clrscode3e}
+\usepackage{algorithm}
+\usepackage{latexsym}
+
+\begin{document}
+	\begin{algorithm}[htbp]
+		\caption{Linear search}
+		\label{alg:tsh}
+		\begin{codebox}
+			\zi		\textbf{Input:} A sequence of $n$ numbers $A$ and a constant $v$
+			\zi 	\textbf{Output:} Index $i$;
+			\li 	\For $i=1$ \textbf{to} $A.length$
+					\Do
+			\li 		\If $A[i] == v$ 
+						\Then
+			\li				$\textbf{return } i$;
+						\End
+					\End
+			\li		$\textbf{retunr } NIL$;
+		\end{codebox}
+	\end{algorithm}
+\end{document}

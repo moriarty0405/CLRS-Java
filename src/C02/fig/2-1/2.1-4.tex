@@ -1,0 +1,47 @@
+\documentclass[review, authoryear, 3p, 12pt]{elsarticle}
+
+\usepackage{lineno}
+
+% package for hyperlink
+\usepackage[colorlinks, anchorcolor=blue]{hyperref}
+
+% package for color of the text
+\usepackage{color}
+
+% package for new caption name
+\usepackage{scrbase}
+
+% packae for table
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{diagbox}
+
+% package for math
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathrsfs} %curlycue for letters
+
+% package for subimage
+\usepackage{subfig}
+
+% package for algorithm
+\usepackage{clrscode3e}
+\usepackage{algorithm}
+\usepackage{latexsym}
+
+\begin{document}
+	\begin{algorithm}[htbp]
+		\caption{Binary adding algorithm}
+		\label{alg:tsh}
+		\begin{codebox}
+			\zi		\textbf{Input:} A sequence of $n$ numbers $A$ and a sequence of $n$ numbers $B$
+			\zi 	\textbf{Output:} A sequence of $n+1$ numbers $C = [c_1, c_2, . . . , c_{n+1}]$;
+			\li 	\For $i=1$ \textbf{to} $n$
+					\Do
+			\li 		$C[i]=(A[i]+B[i]+carry)\%2$;
+			\li 		$carry=(A[i]+B[i]+carry)/2$
+					\End
+			\li		$C[i+1]=carry$;
+		\end{codebox}
+	\end{algorithm}
+\end{document}
