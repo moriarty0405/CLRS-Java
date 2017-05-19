@@ -70,4 +70,35 @@
 					\End
 		\end{codebox}
 	\end{algorithm}
+	
+	\begin{equation*}
+		T(n)=
+		\begin{cases}
+			1 &\text{if $n=1$},\\
+			T(n-1)+n-1 &\text{if $n>1$}.
+		\end{cases}
+	\end{equation*}
+	
+	\begin{algorithm}[htbp]
+		\caption{BinarySearch(A,target)}
+		\begin{codebox}
+			\li 	$low=1$;
+			\li 	$high=A.length$;
+			\li 	\While $low <= high$
+					\Do
+			\li 		$mid=(low+high)/2$;
+			\li 		\If $A[mid] == target$
+						\Do
+			\li 			\Return $mid$;
+						\End
+			\li 		\If $A[mid] > target$
+						\Do
+			\li 			$high = mid-1$;
+			\li 		\Else
+			\li 			$low=mid+1$;
+						\End
+					\End
+			\li 	\Return $-1$;
+		\end{codebox}
+	\end{algorithm}
 \end{document}
