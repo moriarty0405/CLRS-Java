@@ -5,24 +5,10 @@
 % package for hyperlink
 \usepackage[colorlinks, anchorcolor=blue]{hyperref}
 
-% package for color of the text
-\usepackage{color}
-
-% package for new caption name
-\usepackage{scrbase}
-
-% packae for table
-\usepackage{booktabs}
-\usepackage{multirow}
-\usepackage{diagbox}
-
 % package for math
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{mathrsfs} %curlycue for letters
-
-% package for subimage
-\usepackage{subfig}
 
 % package for algorithm
 \usepackage{clrscode3e}
@@ -31,8 +17,75 @@
 
 \begin{document}
 	\begin{algorithm}[htbp]
+		\caption{Insertion Sort(Non-increasing order)}
+		\begin{codebox}
+			\li 	\For $j=2$ \textbf{to} $A.length$
+			\Do
+			\li 		$key = A[j]$;
+			\li 		$i = j-1$;
+			\li 		\While $(j>0 \textbf{ and } A[i] < key)$
+			\Do
+			\li				$A[i+1]=A[i]$;
+			\li 			$i--$; 
+			\End
+			\li		$A[i+1]=key$;
+		\end{codebox}
+	\end{algorithm}
+	
+	\begin{algorithm}[htbp]
+		\caption{Linear search}
+		\begin{codebox}
+			\zi		\textbf{Input:} A sequence of $n$ numbers $A$ and a constant $v$
+			\zi 	\textbf{Output:} Index $i$;
+			\li 	\For $i=1$ \textbf{to} $A.length$
+			\Do
+			\li 		\If $A[i] == v$ 
+			\Then
+			\li				$\textbf{return } i$;
+			\End
+			\End
+			\li		$\textbf{retunr } NIL$;
+		\end{codebox}
+	\end{algorithm}
+	
+	\begin{algorithm}[htbp]
+		\caption{Binary adding algorithm}
+		\begin{codebox}
+			\zi		\textbf{Input:} A sequence of $n$ numbers $A$ and a sequence of $n$ numbers $B$
+			\zi 	\textbf{Output:} A sequence of $n+1$ numbers $C = [c_1, c_2, . . . , c_{n+1}]$;
+			\li 	\For $i=1$ \textbf{to} $n$
+			\Do
+			\li 		$C[i]=(A[i]+B[i]+carry)\%2$;
+			\li 		$carry=(A[i]+B[i]+carry)/2$
+			\End
+			\li		$C[i+1]=carry$;
+		\end{codebox}
+	\end{algorithm}
+	
+	\begin{algorithm}[htbp]
+		\caption{Selection Sort}
+		\begin{codebox}
+			\zi		\textbf{Input:} A sequence of $n$ numbers unsorted array $A$;
+			\zi 	\textbf{Output:} Sorted array $A$;
+			\li 	\For $i=1$ \textbf{to} $n-1$
+			\Do
+			\li 		$min = i$;
+			\li 		\For $j=i+1$ \textbf{to} $n$
+			\Do
+			\li 			\If $A[j] < A[min]$
+			\Then
+			\li 				$min = j$;
+			\End
+			\End
+			\li			$A[i]=temp$;
+			\li 		$A[i]=A[min]$;
+			\li 		$A[min]=A[i]$;
+			\End
+		\end{codebox}
+	\end{algorithm}
+	
+	\begin{algorithm}[htbp]
 		\caption{Merge(A,p,q,r)}
-		\label{alg:tsh}
 		\begin{codebox}
 			\li 	$n_1=q-p+1$;
 			\li 	$n_2=r-q$;
