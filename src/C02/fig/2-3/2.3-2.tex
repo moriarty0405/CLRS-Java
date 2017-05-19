@@ -1,0 +1,73 @@
+\documentclass[review, authoryear, 3p, 12pt]{elsarticle}
+
+\usepackage{lineno}
+
+% package for hyperlink
+\usepackage[colorlinks, anchorcolor=blue]{hyperref}
+
+% package for color of the text
+\usepackage{color}
+
+% package for new caption name
+\usepackage{scrbase}
+
+% packae for table
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{diagbox}
+
+% package for math
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathrsfs} %curlycue for letters
+
+% package for subimage
+\usepackage{subfig}
+
+% package for algorithm
+\usepackage{clrscode3e}
+\usepackage{algorithm}
+\usepackage{latexsym}
+
+\begin{document}
+	\begin{algorithm}[htbp]
+		\caption{Merge(A,p,q,r)}
+		\label{alg:tsh}
+		\begin{codebox}
+			\li 	$n_1=q-p+1$;
+			\li 	$n_2=r-q$;
+			\li 	\text{Let $L[1..n_1]$ and $R[1..n_2]$ be new arrays}
+			\li 	\For $i=1$ \textbf{to} $n_1$
+					\Do
+			\li 		$L[i] = A[p+i-1]$;
+						\End
+			\li 	\For $j=1$ \textbf{to} $n_2$
+					\Do
+			\li 		$R[j] = A[q+i]$;
+					\End
+			\li 	$i=1$;
+			\li 	$j=1$;
+			\li 	$k=p$;
+			\li 	\While $i < n_1$ \textbf{and} $j < n_2$
+					\Do
+			\li 		\If $L[i] \leq R[j]$
+						\Do
+			\li 			$A[k]=L[i]$;
+			\li 			$i++$;
+			\li			\Else
+			\li 			$A[k]=R[j]$;
+			\li 			$j++$;
+						\End
+			\li			$k++$;
+					\End
+			\li 	\If $j==n_2$
+					\Do
+			\li 		\For $m=k$ \textbf{to} $r$
+							\Do
+			\li 				$A[m] = L[i]$;
+			\li 				$i++$;
+						\End
+					\End
+		\end{codebox}
+	\end{algorithm}
+\end{document}
